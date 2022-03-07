@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "5fdaa174-b0d3-444e-b5cc-a325c40b67de",
+		"name": "V1 simple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "What is the prize of gold?",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Status code name has string\", function () {",
+							"    pm.response.to.have.status(\"OK\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=What is the price of gold?",
+					"protocol": "http",
+					"host": [
+						"api",
+						"wolframalpha",
+						"com"
+					],
+					"path": [
+						"v1",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "{{appid}}"
+						},
+						{
+							"key": "i",
+							"value": "What is the price of gold?"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "when is the next fullmoon?",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=When is the next fullmoon?",
+					"protocol": "http",
+					"host": [
+						"api",
+						"wolframalpha",
+						"com"
+					],
+					"path": [
+						"v1",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "{{appid}}"
+						},
+						{
+							"key": "i",
+							"value": "When is the next fullmoon?"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Who lives in a pineapple under the sea?",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"",
+							"if (pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"})){",
+							"    console.log(pm.response.headers.get('Content-Type'));",
+							"",
+							"}",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=Who lives in a pineapple under the sea?&format=plaintext",
+					"protocol": "http",
+					"host": [
+						"api",
+						"wolframalpha",
+						"com"
+					],
+					"path": [
+						"v1",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "{{appid}}"
+						},
+						{
+							"key": "i",
+							"value": "Who lives in a pineapple under the sea?"
+						},
+						{
+							"key": "format",
+							"value": "plaintext"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "can i ask you anything?",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=can i ask you anything?",
+					"protocol": "http",
+					"host": [
+						"api",
+						"wolframalpha",
+						"com"
+					],
+					"path": [
+						"v1",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "{{appid}}"
+						},
+						{
+							"key": "i",
+							"value": "can i ask you anything?"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "\"Where does Wolfram Alpha's data come from?\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"})){",
+							"    console.log('- How much may I use the Wolfram|Alpha APIs?\\n- You can make up to 2,000 free API calls per month for non-commercial purposes. For commercial use and other options, the amount of requests you can make is subject to your pricing plan and the Wolfram|Alpha API Terms of Use.');",
+							"}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=\"Where does Wolfram Alpha's data come from?\"",
+					"protocol": "http",
+					"host": [
+						"api",
+						"wolframalpha",
+						"com"
+					],
+					"path": [
+						"v1",
+						"simple"
+					],
+					"query": [
+						{
+							"key": "appid",
+							"value": "{{appid}}"
+						},
+						{
+							"key": "i",
+							"value": "\"Where does Wolfram Alpha's data come from?\""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{appid}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "i",
+			"value": "question",
+			"type": "string"
+		},
+		{
+			"key": "appid",
+			"value": "{{appid}}",
+			"type": "string"
+		}
+	]
+}
