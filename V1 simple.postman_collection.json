@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "5fdaa174-b0d3-444e-b5cc-a325c40b67de",
-		"name": "V1 simple",
+		"_postman_id": "5ac5df8b-94b2-4cf9-8e73-bb9f25807aa2",
+		"name": "V1 simple imported",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -39,7 +39,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=What is the price of gold?",
+					"raw": "http://api.wolframalpha.com/v1/simple?appid={{appid}}&i=What is gold?",
 					"protocol": "http",
 					"host": [
 						"api",
@@ -57,7 +57,7 @@
 						},
 						{
 							"key": "i",
-							"value": "What is the price of gold?"
+							"value": "What is gold?"
 						}
 					]
 				}
